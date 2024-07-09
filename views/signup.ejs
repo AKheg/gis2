@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+</head>
+<body>
+    <% if (failed) {%>
+        <h4>Ошибка: <%= msg%></h4>
+    <%} %>
+    <h1>Регистрация</h1>
+    <form action="/auth/signup" method="post">
+        <section>
+            <label for="username">Имя пользователя</label>
+            <input id="username" name="username" type="text" autocomplete="username" required autofocus>
+        </section>
+        <section>
+            <label for="current-password">Пароль</label>
+            <input id="current-password" name="password" type="text" autocomplete="current-password" required >
+        </section>
+        <button type="submit">Зарегистрироваться</button>
+        <a href="/auth/login">Уже зарегистрированы?</a>
+    </form>
+</body>
+</html>
